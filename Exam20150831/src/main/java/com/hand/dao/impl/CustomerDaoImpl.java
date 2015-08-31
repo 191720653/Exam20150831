@@ -58,6 +58,7 @@ public class CustomerDaoImpl implements ICustomerDao {
 		Session session = factory.openSession();
 		Customer customer = (Customer) session.get(Customer.class, Short.parseShort(customerId + ""));
 		session.delete(customer);
+		session.flush();
 		session.close();
 	}
 
