@@ -34,13 +34,13 @@
         <property name="lastUpdate" type="java.sql.Timestamp">
             <column name="last_update" length="19" not-null="true" />
         </property>
-        <set name="rentals" inverse="true">
+        <set name="rentals" inverse="true" cascade="all">
             <key>
                 <column name="customer_id" not-null="true" />
             </key>
             <one-to-many class="com.hand.entity.Rental" />
         </set>
-        <set name="payments" inverse="true">
+        <set name="payments" inverse="true" cascade="all">
             <key>
                 <column name="customer_id" not-null="true" />
             </key>
